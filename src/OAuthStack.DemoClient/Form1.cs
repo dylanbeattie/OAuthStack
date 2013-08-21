@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using DotNetOpenAuth.OAuth2;
+using OAuthStack.FakeServices;
 
 namespace OAuthStack.DemoClient {
     public partial class Form1 : Form {
@@ -36,9 +37,9 @@ namespace OAuthStack.DemoClient {
                 MessageBox.Show(ex.Message, "Oops", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void passwordLabel_Click(object sender, EventArgs e) {
-
+        private void Form1_Load(object sender, EventArgs e) {
+            oauth2ClientIdTextBox.Text = FakeOAuth2ClientStore.CLIENT_IDENTIFIER;
+            oauth2ClientSecretTextBox.Text = FakeOAuth2ClientStore.CLIENT_SECRET;
         }
     }
 }

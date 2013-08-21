@@ -128,7 +128,6 @@
             this.passwordLabel.Size = new System.Drawing.Size(139, 13);
             this.passwordLabel.TabIndex = 0;
             this.passwordLabel.Text = "Resource Owner Password:";
-            this.passwordLabel.Click += new System.EventHandler(this.passwordLabel_Click);
             // 
             // passwordTextBox
             // 
@@ -160,7 +159,6 @@
             this.label3.Size = new System.Drawing.Size(91, 13);
             this.label3.TabIndex = 0;
             this.label3.Text = "OAuth2 Scope(s):";
-            this.label3.Click += new System.EventHandler(this.passwordLabel_Click);
             // 
             // scopesTextBox
             // 
@@ -180,7 +178,6 @@
             this.accessTokenLabel.Size = new System.Drawing.Size(118, 13);
             this.accessTokenLabel.TabIndex = 0;
             this.accessTokenLabel.Text = "OAuth2 Access Token:";
-            this.accessTokenLabel.Click += new System.EventHandler(this.passwordLabel_Click);
             // 
             // accessTokenTextBox
             // 
@@ -199,7 +196,6 @@
             this.label4.Size = new System.Drawing.Size(120, 13);
             this.label4.TabIndex = 0;
             this.label4.Text = "OAuth2 Refresh Token:";
-            this.label4.Click += new System.EventHandler(this.passwordLabel_Click);
             // 
             // refreshTokenTextBox
             // 
@@ -218,7 +214,6 @@
             this.label5.Size = new System.Drawing.Size(111, 13);
             this.label5.TabIndex = 0;
             this.label5.Text = "OAuth2 Token Expiry:";
-            this.label5.Click += new System.EventHandler(this.passwordLabel_Click);
             // 
             // tokenExpiryTextBox
             // 
@@ -255,6 +250,7 @@
             this.Controls.Add(this.tokenEndpointLabel);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

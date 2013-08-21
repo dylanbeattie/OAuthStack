@@ -9,6 +9,8 @@ namespace OAuthStack.FakeServices {
 
         public string ClientName { get; set; }
 
+        public string ClientIdentifier { get { return (clientIdentifier); } }
+
         /// <summary>Initialise a new instance of the FakeOAuth2Client based on the supplied identifier and secret.</summary>
         /// <param name="clientIdentifier">A unique ID that should match that supplied in the client_id field of client requests.</param>
         /// <param name="clientSecret">A secret shared between the client app and the authorization server.</param>

@@ -118,6 +118,16 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OAuthStack.Common\OAuthStack.Common.csproj">
+      <Project>{3FE2C098-6153-40AC-B68C-A6C403A35AAC}</Project>
+      <Name>OAuthStack.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OAuthStack.FakeServices\OAuthStack.FakeServices.csproj">
+      <Project>{166BB31D-86DD-4C91-B051-EDAD7C8AB249}</Project>
+      <Name>OAuthStack.FakeServices</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.8\tools\Microsoft.Bcl.Build.targets" />
