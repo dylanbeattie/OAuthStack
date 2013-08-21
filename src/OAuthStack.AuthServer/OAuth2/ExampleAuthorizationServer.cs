@@ -14,11 +14,13 @@ namespace OAuthStack.AuthServer.OAuth2 {
         private readonly ICryptoKeyStore cryptoKeyStore;
         private readonly ICryptoKeyProvider keyProvider;
         private readonly IOAuth2ClientStore clientStore;
+        private readonly IUserStore userStore;
 
-        public ExampleAuthorizationServer(ICryptoKeyStore cryptoKeyStore, ICryptoKeyProvider keyProvider, IOAuth2ClientStore clientStore) {
+        public ExampleAuthorizationServer(ICryptoKeyStore cryptoKeyStore, ICryptoKeyProvider keyProvider, IOAuth2ClientStore clientStore, IUserStore userStore) {
             this.cryptoKeyStore = cryptoKeyStore;
             this.keyProvider = keyProvider;
             this.clientStore = clientStore;
+            this.userStore = userStore;
         }
 
         public AccessTokenResult CreateAccessToken(IAccessTokenRequest accessTokenRequestMessage) {
@@ -51,8 +53,9 @@ namespace OAuthStack.AuthServer.OAuth2 {
         }
 
         public AutomatedUserAuthorizationCheckResponse CheckAuthorizeResourceOwnerCredentialGrant(string userName, string password, IAccessTokenRequest accessRequest) {
-            //TODO: implement this.
-            return (new AutomatedUserAuthorizationCheckResponse(accessRequest, true, userName));
+            var user = userStore.GetUser(userName);
+            var approved = (user != null && user.VerifyPassword(password));
+            return (new AutomatedUserAuthorizationCheckResponse(accessRequest, approved, userName));
         }
 
         public AutomatedAuthorizationCheckResponse CheckAuthorizeClientCredentialsGrant(IAccessTokenRequest accessRequest) {

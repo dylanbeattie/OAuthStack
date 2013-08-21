@@ -15,7 +15,7 @@ namespace OAuthStack.AuthServer.Controllers {
         public OAuth2Controller() {
             // In this example, we're just newing up an auth server. A real implementation would use an IOC container
             // to resolve the dependencies and inject the auth server into our controller.
-            var exampleAuthServer = new ExampleAuthorizationServer(new FakeCryptoKeyStore(), new FakeCryptoKeyProvider(), new FakeOAuth2ClientStore());
+            var exampleAuthServer = new ExampleAuthorizationServer(new FakeCryptoKeyStore(), new FakeCryptoKeyProvider(), new FakeOAuth2ClientStore(), new FakeUserStore());
             this.authServer = new AuthorizationServer(exampleAuthServer);
         }
 
