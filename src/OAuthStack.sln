@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OAuthStack.RestServer", "OAuthStack.RestServer\OAuthStack.RestServer.csproj", "{D4EFF34A-66A8-4714-A9AB-5F93B7DDC775}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OAuthStack.AuthServer", "OAuthStack.AuthServer\OAuthStack.AuthServer.csproj", "{596224CF-F9A2-44DA-9BCD-7C856A775F28}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OAuthStack.DemoClient", "OAuthStack.DemoClient\OAuthStack.DemoClient.csproj", "{DE068D12-F599-4BE4-B95B-00D9543B3A8C}"
@@ -28,16 +26,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D4EFF34A-66A8-4714-A9AB-5F93B7DDC775}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D4EFF34A-66A8-4714-A9AB-5F93B7DDC775}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D4EFF34A-66A8-4714-A9AB-5F93B7DDC775}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{D4EFF34A-66A8-4714-A9AB-5F93B7DDC775}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{D4EFF34A-66A8-4714-A9AB-5F93B7DDC775}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{D4EFF34A-66A8-4714-A9AB-5F93B7DDC775}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D4EFF34A-66A8-4714-A9AB-5F93B7DDC775}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D4EFF34A-66A8-4714-A9AB-5F93B7DDC775}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{D4EFF34A-66A8-4714-A9AB-5F93B7DDC775}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{D4EFF34A-66A8-4714-A9AB-5F93B7DDC775}.Release|x86.ActiveCfg = Release|Any CPU
 		{596224CF-F9A2-44DA-9BCD-7C856A775F28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{596224CF-F9A2-44DA-9BCD-7C856A775F28}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{596224CF-F9A2-44DA-9BCD-7C856A775F28}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU

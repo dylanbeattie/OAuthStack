@@ -42,6 +42,8 @@
             this.refreshTokenTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tokenExpiryTextBox = new System.Windows.Forms.TextBox();
+            this.refreshTokenButton = new System.Windows.Forms.Button();
+            this.logTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // tokenEndpointLabel
@@ -59,7 +61,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tokenEndpointTextBox.Location = new System.Drawing.Point(159, 12);
             this.tokenEndpointTextBox.Name = "tokenEndpointTextBox";
-            this.tokenEndpointTextBox.Size = new System.Drawing.Size(319, 20);
+            this.tokenEndpointTextBox.Size = new System.Drawing.Size(239, 20);
             this.tokenEndpointTextBox.TabIndex = 1;
             this.tokenEndpointTextBox.Text = "http://localhost:50001/oauth2/token";
             // 
@@ -78,7 +80,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.oauth2ClientIdTextBox.Location = new System.Drawing.Point(159, 38);
             this.oauth2ClientIdTextBox.Name = "oauth2ClientIdTextBox";
-            this.oauth2ClientIdTextBox.Size = new System.Drawing.Size(319, 20);
+            this.oauth2ClientIdTextBox.Size = new System.Drawing.Size(239, 20);
             this.oauth2ClientIdTextBox.TabIndex = 1;
             this.oauth2ClientIdTextBox.Text = "fake_client_id";
             // 
@@ -97,7 +99,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.oauth2ClientSecretTextBox.Location = new System.Drawing.Point(159, 64);
             this.oauth2ClientSecretTextBox.Name = "oauth2ClientSecretTextBox";
-            this.oauth2ClientSecretTextBox.Size = new System.Drawing.Size(319, 20);
+            this.oauth2ClientSecretTextBox.Size = new System.Drawing.Size(239, 20);
             this.oauth2ClientSecretTextBox.TabIndex = 1;
             this.oauth2ClientSecretTextBox.Text = "fake_client_secret";
             // 
@@ -116,7 +118,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.usernameTextBox.Location = new System.Drawing.Point(159, 90);
             this.usernameTextBox.Name = "usernameTextBox";
-            this.usernameTextBox.Size = new System.Drawing.Size(319, 20);
+            this.usernameTextBox.Size = new System.Drawing.Size(239, 20);
             this.usernameTextBox.TabIndex = 1;
             this.usernameTextBox.Text = "example_username";
             // 
@@ -135,7 +137,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.passwordTextBox.Location = new System.Drawing.Point(159, 116);
             this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.Size = new System.Drawing.Size(319, 20);
+            this.passwordTextBox.Size = new System.Drawing.Size(239, 20);
             this.passwordTextBox.TabIndex = 1;
             this.passwordTextBox.Text = "example_password";
             // 
@@ -145,7 +147,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.exchangeCredentialsButton.Location = new System.Drawing.Point(159, 168);
             this.exchangeCredentialsButton.Name = "exchangeCredentialsButton";
-            this.exchangeCredentialsButton.Size = new System.Drawing.Size(319, 23);
+            this.exchangeCredentialsButton.Size = new System.Drawing.Size(239, 23);
             this.exchangeCredentialsButton.TabIndex = 2;
             this.exchangeCredentialsButton.Text = "Exchange Credentials for Access Token";
             this.exchangeCredentialsButton.UseVisualStyleBackColor = true;
@@ -166,7 +168,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.scopesTextBox.Location = new System.Drawing.Point(159, 142);
             this.scopesTextBox.Name = "scopesTextBox";
-            this.scopesTextBox.Size = new System.Drawing.Size(319, 20);
+            this.scopesTextBox.Size = new System.Drawing.Size(239, 20);
             this.scopesTextBox.TabIndex = 1;
             this.scopesTextBox.Text = "scope1 scope2 scope3";
             // 
@@ -185,7 +187,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.accessTokenTextBox.Location = new System.Drawing.Point(159, 197);
             this.accessTokenTextBox.Name = "accessTokenTextBox";
-            this.accessTokenTextBox.Size = new System.Drawing.Size(319, 20);
+            this.accessTokenTextBox.Size = new System.Drawing.Size(239, 20);
             this.accessTokenTextBox.TabIndex = 1;
             // 
             // label4
@@ -203,7 +205,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.refreshTokenTextBox.Location = new System.Drawing.Point(159, 223);
             this.refreshTokenTextBox.Name = "refreshTokenTextBox";
-            this.refreshTokenTextBox.Size = new System.Drawing.Size(319, 20);
+            this.refreshTokenTextBox.Size = new System.Drawing.Size(239, 20);
             this.refreshTokenTextBox.TabIndex = 1;
             // 
             // label5
@@ -221,14 +223,37 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tokenExpiryTextBox.Location = new System.Drawing.Point(159, 249);
             this.tokenExpiryTextBox.Name = "tokenExpiryTextBox";
-            this.tokenExpiryTextBox.Size = new System.Drawing.Size(319, 20);
+            this.tokenExpiryTextBox.Size = new System.Drawing.Size(239, 20);
             this.tokenExpiryTextBox.TabIndex = 1;
+            // 
+            // refreshTokenButton
+            // 
+            this.refreshTokenButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.refreshTokenButton.Enabled = false;
+            this.refreshTokenButton.Location = new System.Drawing.Point(159, 275);
+            this.refreshTokenButton.Name = "refreshTokenButton";
+            this.refreshTokenButton.Size = new System.Drawing.Size(239, 23);
+            this.refreshTokenButton.TabIndex = 2;
+            this.refreshTokenButton.Text = "Refresh Access Token";
+            this.refreshTokenButton.UseVisualStyleBackColor = true;
+            this.refreshTokenButton.Click += new System.EventHandler(this.refreshTokenButton_Click);
+            // 
+            // logTextBox
+            // 
+            this.logTextBox.Location = new System.Drawing.Point(12, 304);
+            this.logTextBox.Multiline = true;
+            this.logTextBox.Name = "logTextBox";
+            this.logTextBox.Size = new System.Drawing.Size(386, 194);
+            this.logTextBox.TabIndex = 3;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(490, 510);
+            this.ClientSize = new System.Drawing.Size(410, 510);
+            this.Controls.Add(this.logTextBox);
+            this.Controls.Add(this.refreshTokenButton);
             this.Controls.Add(this.exchangeCredentialsButton);
             this.Controls.Add(this.tokenExpiryTextBox);
             this.Controls.Add(this.label5);
@@ -277,6 +302,8 @@
         private System.Windows.Forms.TextBox refreshTokenTextBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox tokenExpiryTextBox;
+        private System.Windows.Forms.Button refreshTokenButton;
+        private System.Windows.Forms.TextBox logTextBox;
     }
 }
 
