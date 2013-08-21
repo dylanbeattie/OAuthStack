@@ -1,6 +1,9 @@
-﻿using OAuthStack.Common.Infrastructure;
+﻿using System;
+using System.Web;
+using OAuthStack.Common.Infrastructure;
 using OAuthStack.Common.ServiceModel;
 using OAuthStack.Common.Services;
+using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 
 namespace OAuthStack.UserDataServer.ServiceModel {
@@ -13,6 +16,7 @@ namespace OAuthStack.UserDataServer.ServiceModel {
         }
 
         public User Any(Users users) {
+            if (HttpContext.Current.User.Identity.Name != users.Username) throw (new UnauthorizedAccessException());
             return (userStore.GetUser(users.Username));
         }
     }

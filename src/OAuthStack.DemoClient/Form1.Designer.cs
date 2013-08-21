@@ -119,6 +119,7 @@
             this.usernameTextBox.Size = new System.Drawing.Size(267, 20);
             this.usernameTextBox.TabIndex = 1;
             this.usernameTextBox.Text = "example_username";
+            this.usernameTextBox.TextChanged += new System.EventHandler(this.usernameTextBox_TextChanged);
             // 
             // passwordLabel
             // 
@@ -139,7 +140,7 @@
             // 
             // exchangeCredentialsButton
             // 
-            this.exchangeCredentialsButton.Location = new System.Drawing.Point(159, 195);
+            this.exchangeCredentialsButton.Location = new System.Drawing.Point(159, 181);
             this.exchangeCredentialsButton.Name = "exchangeCredentialsButton";
             this.exchangeCredentialsButton.Size = new System.Drawing.Size(267, 23);
             this.exchangeCredentialsButton.TabIndex = 2;
@@ -150,7 +151,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 172);
+            this.label3.Location = new System.Drawing.Point(12, 158);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 13);
             this.label3.TabIndex = 0;
@@ -158,16 +159,16 @@
             // 
             // scopesTextBox
             // 
-            this.scopesTextBox.Location = new System.Drawing.Point(159, 169);
+            this.scopesTextBox.Location = new System.Drawing.Point(159, 155);
             this.scopesTextBox.Name = "scopesTextBox";
             this.scopesTextBox.Size = new System.Drawing.Size(267, 20);
             this.scopesTextBox.TabIndex = 1;
-            this.scopesTextBox.Text = "scope1 scope2 scope3";
+            this.scopesTextBox.Text = "user_info some_other_scope try_changing_these";
             // 
             // accessTokenLabel
             // 
             this.accessTokenLabel.AutoSize = true;
-            this.accessTokenLabel.Location = new System.Drawing.Point(12, 227);
+            this.accessTokenLabel.Location = new System.Drawing.Point(12, 213);
             this.accessTokenLabel.Name = "accessTokenLabel";
             this.accessTokenLabel.Size = new System.Drawing.Size(118, 13);
             this.accessTokenLabel.TabIndex = 0;
@@ -175,7 +176,7 @@
             // 
             // accessTokenTextBox
             // 
-            this.accessTokenTextBox.Location = new System.Drawing.Point(159, 224);
+            this.accessTokenTextBox.Location = new System.Drawing.Point(159, 210);
             this.accessTokenTextBox.Name = "accessTokenTextBox";
             this.accessTokenTextBox.Size = new System.Drawing.Size(267, 20);
             this.accessTokenTextBox.TabIndex = 1;
@@ -183,7 +184,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 253);
+            this.label4.Location = new System.Drawing.Point(12, 239);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(120, 13);
             this.label4.TabIndex = 0;
@@ -191,7 +192,7 @@
             // 
             // refreshTokenTextBox
             // 
-            this.refreshTokenTextBox.Location = new System.Drawing.Point(159, 250);
+            this.refreshTokenTextBox.Location = new System.Drawing.Point(159, 236);
             this.refreshTokenTextBox.Name = "refreshTokenTextBox";
             this.refreshTokenTextBox.Size = new System.Drawing.Size(267, 20);
             this.refreshTokenTextBox.TabIndex = 1;
@@ -199,7 +200,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 279);
+            this.label5.Location = new System.Drawing.Point(12, 265);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(111, 13);
             this.label5.TabIndex = 0;
@@ -207,7 +208,7 @@
             // 
             // tokenExpiryTextBox
             // 
-            this.tokenExpiryTextBox.Location = new System.Drawing.Point(159, 276);
+            this.tokenExpiryTextBox.Location = new System.Drawing.Point(159, 262);
             this.tokenExpiryTextBox.Name = "tokenExpiryTextBox";
             this.tokenExpiryTextBox.Size = new System.Drawing.Size(267, 20);
             this.tokenExpiryTextBox.TabIndex = 1;
@@ -215,7 +216,7 @@
             // refreshTokenButton
             // 
             this.refreshTokenButton.Enabled = false;
-            this.refreshTokenButton.Location = new System.Drawing.Point(159, 302);
+            this.refreshTokenButton.Location = new System.Drawing.Point(159, 288);
             this.refreshTokenButton.Name = "refreshTokenButton";
             this.refreshTokenButton.Size = new System.Drawing.Size(267, 23);
             this.refreshTokenButton.TabIndex = 2;
@@ -231,14 +232,14 @@
             this.outputTextBox.Location = new System.Drawing.Point(432, 12);
             this.outputTextBox.Multiline = true;
             this.outputTextBox.Name = "outputTextBox";
-            this.outputTextBox.Size = new System.Drawing.Size(533, 707);
+            this.outputTextBox.Size = new System.Drawing.Size(433, 654);
             this.outputTextBox.TabIndex = 3;
             this.outputTextBox.TextChanged += new System.EventHandler(this.outputTextBox_TextChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 334);
+            this.label6.Location = new System.Drawing.Point(12, 320);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(115, 13);
             this.label6.TabIndex = 4;
@@ -246,7 +247,7 @@
             // 
             // resourceUriTextBox
             // 
-            this.resourceUriTextBox.Location = new System.Drawing.Point(159, 331);
+            this.resourceUriTextBox.Location = new System.Drawing.Point(159, 317);
             this.resourceUriTextBox.Name = "resourceUriTextBox";
             this.resourceUriTextBox.Size = new System.Drawing.Size(267, 20);
             this.resourceUriTextBox.TabIndex = 1;
@@ -255,7 +256,7 @@
             // evhLinkLabel
             // 
             this.evhLinkLabel.AutoSize = true;
-            this.evhLinkLabel.Location = new System.Drawing.Point(283, 139);
+            this.evhLinkLabel.Location = new System.Drawing.Point(311, 139);
             this.evhLinkLabel.Name = "evhLinkLabel";
             this.evhLinkLabel.Size = new System.Drawing.Size(25, 13);
             this.evhLinkLabel.TabIndex = 5;
@@ -266,7 +267,7 @@
             // satchLinkLabel
             // 
             this.satchLinkLabel.AutoSize = true;
-            this.satchLinkLabel.Location = new System.Drawing.Point(314, 139);
+            this.satchLinkLabel.Location = new System.Drawing.Point(342, 139);
             this.satchLinkLabel.Name = "satchLinkLabel";
             this.satchLinkLabel.Size = new System.Drawing.Size(33, 13);
             this.satchLinkLabel.TabIndex = 6;
@@ -277,7 +278,7 @@
             // knopflerLinkLabel
             // 
             this.knopflerLinkLabel.AutoSize = true;
-            this.knopflerLinkLabel.Location = new System.Drawing.Point(353, 139);
+            this.knopflerLinkLabel.Location = new System.Drawing.Point(381, 139);
             this.knopflerLinkLabel.Name = "knopflerLinkLabel";
             this.knopflerLinkLabel.Size = new System.Drawing.Size(45, 13);
             this.knopflerLinkLabel.TabIndex = 7;
@@ -287,7 +288,7 @@
             // 
             // getResourceButton
             // 
-            this.getResourceButton.Location = new System.Drawing.Point(159, 357);
+            this.getResourceButton.Location = new System.Drawing.Point(159, 343);
             this.getResourceButton.Name = "getResourceButton";
             this.getResourceButton.Size = new System.Drawing.Size(267, 23);
             this.getResourceButton.TabIndex = 2;
@@ -299,7 +300,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(977, 731);
+            this.ClientSize = new System.Drawing.Size(877, 678);
             this.Controls.Add(this.knopflerLinkLabel);
             this.Controls.Add(this.satchLinkLabel);
             this.Controls.Add(this.evhLinkLabel);

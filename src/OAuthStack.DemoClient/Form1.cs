@@ -116,5 +116,9 @@ namespace OAuthStack.DemoClient {
         private void outputTextBox_TextChanged(object sender, EventArgs e) {
 
         }
+
+        private void usernameTextBox_TextChanged(object sender, EventArgs e) {
+            getResourceButton.Text = String.Format("GET /users/{0}", usernameTextBox.Text);
+        }
     }
 }
