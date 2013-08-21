@@ -16,7 +16,7 @@ namespace OAuthStack.FakeServices {
             internal readonly string Bucket;
             internal readonly byte[] Secret;
             internal readonly DateTime ExpiresUtc;
-            public SymmetricCryptoKey(string handle, string bucket, byte[] secret, DateTime expiresUtc) {
+            public SymmetricCryptoKey(string bucket, string handle, byte[] secret, DateTime expiresUtc) {
                 Handle = handle;
                 Bucket = bucket;
                 Secret = secret;
