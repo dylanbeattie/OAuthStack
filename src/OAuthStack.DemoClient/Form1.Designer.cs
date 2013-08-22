@@ -146,7 +146,7 @@
             // 
             // exchangeCredentialsButton
             // 
-            this.exchangeCredentialsButton.Location = new System.Drawing.Point(159, 441);
+            this.exchangeCredentialsButton.Location = new System.Drawing.Point(159, 308);
             this.exchangeCredentialsButton.Name = "exchangeCredentialsButton";
             this.exchangeCredentialsButton.Size = new System.Drawing.Size(267, 23);
             this.exchangeCredentialsButton.TabIndex = 2;
@@ -157,7 +157,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 418);
+            this.label3.Location = new System.Drawing.Point(12, 285);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 13);
             this.label3.TabIndex = 0;
@@ -165,7 +165,7 @@
             // 
             // scopesTextBox
             // 
-            this.scopesTextBox.Location = new System.Drawing.Point(159, 415);
+            this.scopesTextBox.Location = new System.Drawing.Point(159, 282);
             this.scopesTextBox.Name = "scopesTextBox";
             this.scopesTextBox.Size = new System.Drawing.Size(267, 20);
             this.scopesTextBox.TabIndex = 1;
@@ -174,7 +174,7 @@
             // accessTokenLabel
             // 
             this.accessTokenLabel.AutoSize = true;
-            this.accessTokenLabel.Location = new System.Drawing.Point(12, 473);
+            this.accessTokenLabel.Location = new System.Drawing.Point(12, 340);
             this.accessTokenLabel.Name = "accessTokenLabel";
             this.accessTokenLabel.Size = new System.Drawing.Size(118, 13);
             this.accessTokenLabel.TabIndex = 0;
@@ -182,7 +182,7 @@
             // 
             // accessTokenTextBox
             // 
-            this.accessTokenTextBox.Location = new System.Drawing.Point(159, 470);
+            this.accessTokenTextBox.Location = new System.Drawing.Point(159, 337);
             this.accessTokenTextBox.Name = "accessTokenTextBox";
             this.accessTokenTextBox.Size = new System.Drawing.Size(267, 20);
             this.accessTokenTextBox.TabIndex = 1;
@@ -190,7 +190,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 499);
+            this.label4.Location = new System.Drawing.Point(12, 366);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(120, 13);
             this.label4.TabIndex = 0;
@@ -198,7 +198,7 @@
             // 
             // refreshTokenTextBox
             // 
-            this.refreshTokenTextBox.Location = new System.Drawing.Point(159, 496);
+            this.refreshTokenTextBox.Location = new System.Drawing.Point(159, 363);
             this.refreshTokenTextBox.Name = "refreshTokenTextBox";
             this.refreshTokenTextBox.Size = new System.Drawing.Size(267, 20);
             this.refreshTokenTextBox.TabIndex = 1;
@@ -206,7 +206,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 525);
+            this.label5.Location = new System.Drawing.Point(12, 392);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(111, 13);
             this.label5.TabIndex = 0;
@@ -214,7 +214,7 @@
             // 
             // tokenExpiryTextBox
             // 
-            this.tokenExpiryTextBox.Location = new System.Drawing.Point(159, 522);
+            this.tokenExpiryTextBox.Location = new System.Drawing.Point(159, 389);
             this.tokenExpiryTextBox.Name = "tokenExpiryTextBox";
             this.tokenExpiryTextBox.Size = new System.Drawing.Size(267, 20);
             this.tokenExpiryTextBox.TabIndex = 1;
@@ -222,7 +222,7 @@
             // refreshTokenButton
             // 
             this.refreshTokenButton.Enabled = false;
-            this.refreshTokenButton.Location = new System.Drawing.Point(159, 548);
+            this.refreshTokenButton.Location = new System.Drawing.Point(159, 415);
             this.refreshTokenButton.Name = "refreshTokenButton";
             this.refreshTokenButton.Size = new System.Drawing.Size(267, 23);
             this.refreshTokenButton.TabIndex = 2;
@@ -238,14 +238,14 @@
             this.outputTextBox.Location = new System.Drawing.Point(432, 12);
             this.outputTextBox.Multiline = true;
             this.outputTextBox.Name = "outputTextBox";
-            this.outputTextBox.Size = new System.Drawing.Size(433, 654);
+            this.outputTextBox.Size = new System.Drawing.Size(493, 540);
             this.outputTextBox.TabIndex = 3;
             this.outputTextBox.TextChanged += new System.EventHandler(this.outputTextBox_TextChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 580);
+            this.label6.Location = new System.Drawing.Point(12, 447);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(115, 13);
             this.label6.TabIndex = 4;
@@ -253,7 +253,7 @@
             // 
             // resourceUriTextBox
             // 
-            this.resourceUriTextBox.Location = new System.Drawing.Point(159, 577);
+            this.resourceUriTextBox.Location = new System.Drawing.Point(159, 444);
             this.resourceUriTextBox.Name = "resourceUriTextBox";
             this.resourceUriTextBox.Size = new System.Drawing.Size(267, 20);
             this.resourceUriTextBox.TabIndex = 1;
@@ -294,7 +294,7 @@
             // 
             // getResourceButton
             // 
-            this.getResourceButton.Location = new System.Drawing.Point(159, 603);
+            this.getResourceButton.Location = new System.Drawing.Point(159, 470);
             this.getResourceButton.Name = "getResourceButton";
             this.getResourceButton.Size = new System.Drawing.Size(267, 23);
             this.getResourceButton.TabIndex = 2;
@@ -361,7 +361,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(877, 678);
+            this.ClientSize = new System.Drawing.Size(937, 564);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label6);
@@ -379,7 +379,7 @@
             this.Controls.Add(this.scopesTextBox);
             this.Controls.Add(this.label3);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "OAuthStack : Resource Owner Password Flow - Demo Client";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
