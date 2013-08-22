@@ -50,12 +50,18 @@
             this.satchLinkLabel = new System.Windows.Forms.LinkLabel();
             this.knopflerLinkLabel = new System.Windows.Forms.LinkLabel();
             this.getResourceButton = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tokenEndpointLabel
             // 
             this.tokenEndpointLabel.AutoSize = true;
-            this.tokenEndpointLabel.Location = new System.Drawing.Point(12, 15);
+            this.tokenEndpointLabel.Location = new System.Drawing.Point(6, 25);
             this.tokenEndpointLabel.Name = "tokenEndpointLabel";
             this.tokenEndpointLabel.Size = new System.Drawing.Size(125, 13);
             this.tokenEndpointLabel.TabIndex = 0;
@@ -63,16 +69,16 @@
             // 
             // tokenEndpointTextBox
             // 
-            this.tokenEndpointTextBox.Location = new System.Drawing.Point(159, 12);
+            this.tokenEndpointTextBox.Location = new System.Drawing.Point(153, 22);
             this.tokenEndpointTextBox.Name = "tokenEndpointTextBox";
-            this.tokenEndpointTextBox.Size = new System.Drawing.Size(267, 20);
+            this.tokenEndpointTextBox.Size = new System.Drawing.Size(255, 20);
             this.tokenEndpointTextBox.TabIndex = 1;
             this.tokenEndpointTextBox.Text = "http://localhost:50001/oauth2/token";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 41);
+            this.label1.Location = new System.Drawing.Point(6, 51);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(89, 13);
             this.label1.TabIndex = 0;
@@ -80,16 +86,16 @@
             // 
             // oauth2ClientIdTextBox
             // 
-            this.oauth2ClientIdTextBox.Location = new System.Drawing.Point(159, 38);
+            this.oauth2ClientIdTextBox.Location = new System.Drawing.Point(153, 48);
             this.oauth2ClientIdTextBox.Name = "oauth2ClientIdTextBox";
-            this.oauth2ClientIdTextBox.Size = new System.Drawing.Size(267, 20);
+            this.oauth2ClientIdTextBox.Size = new System.Drawing.Size(255, 20);
             this.oauth2ClientIdTextBox.TabIndex = 1;
             this.oauth2ClientIdTextBox.Text = "fake_client_id";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 67);
+            this.label2.Location = new System.Drawing.Point(6, 77);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(109, 13);
             this.label2.TabIndex = 0;
@@ -97,16 +103,16 @@
             // 
             // oauth2ClientSecretTextBox
             // 
-            this.oauth2ClientSecretTextBox.Location = new System.Drawing.Point(159, 64);
+            this.oauth2ClientSecretTextBox.Location = new System.Drawing.Point(153, 74);
             this.oauth2ClientSecretTextBox.Name = "oauth2ClientSecretTextBox";
-            this.oauth2ClientSecretTextBox.Size = new System.Drawing.Size(267, 20);
+            this.oauth2ClientSecretTextBox.Size = new System.Drawing.Size(255, 20);
             this.oauth2ClientSecretTextBox.TabIndex = 1;
             this.oauth2ClientSecretTextBox.Text = "fake_client_secret";
             // 
             // usernameLabel
             // 
             this.usernameLabel.AutoSize = true;
-            this.usernameLabel.Location = new System.Drawing.Point(12, 93);
+            this.usernameLabel.Location = new System.Drawing.Point(6, 22);
             this.usernameLabel.Name = "usernameLabel";
             this.usernameLabel.Size = new System.Drawing.Size(141, 13);
             this.usernameLabel.TabIndex = 0;
@@ -114,9 +120,9 @@
             // 
             // usernameTextBox
             // 
-            this.usernameTextBox.Location = new System.Drawing.Point(159, 90);
+            this.usernameTextBox.Location = new System.Drawing.Point(153, 19);
             this.usernameTextBox.Name = "usernameTextBox";
-            this.usernameTextBox.Size = new System.Drawing.Size(267, 20);
+            this.usernameTextBox.Size = new System.Drawing.Size(255, 20);
             this.usernameTextBox.TabIndex = 1;
             this.usernameTextBox.Text = "example_username";
             this.usernameTextBox.TextChanged += new System.EventHandler(this.usernameTextBox_TextChanged);
@@ -124,7 +130,7 @@
             // passwordLabel
             // 
             this.passwordLabel.AutoSize = true;
-            this.passwordLabel.Location = new System.Drawing.Point(12, 119);
+            this.passwordLabel.Location = new System.Drawing.Point(6, 48);
             this.passwordLabel.Name = "passwordLabel";
             this.passwordLabel.Size = new System.Drawing.Size(139, 13);
             this.passwordLabel.TabIndex = 0;
@@ -132,15 +138,15 @@
             // 
             // passwordTextBox
             // 
-            this.passwordTextBox.Location = new System.Drawing.Point(159, 116);
+            this.passwordTextBox.Location = new System.Drawing.Point(153, 45);
             this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.Size = new System.Drawing.Size(267, 20);
+            this.passwordTextBox.Size = new System.Drawing.Size(255, 20);
             this.passwordTextBox.TabIndex = 1;
             this.passwordTextBox.Text = "example_password";
             // 
             // exchangeCredentialsButton
             // 
-            this.exchangeCredentialsButton.Location = new System.Drawing.Point(159, 181);
+            this.exchangeCredentialsButton.Location = new System.Drawing.Point(159, 441);
             this.exchangeCredentialsButton.Name = "exchangeCredentialsButton";
             this.exchangeCredentialsButton.Size = new System.Drawing.Size(267, 23);
             this.exchangeCredentialsButton.TabIndex = 2;
@@ -151,7 +157,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 158);
+            this.label3.Location = new System.Drawing.Point(12, 418);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 13);
             this.label3.TabIndex = 0;
@@ -159,7 +165,7 @@
             // 
             // scopesTextBox
             // 
-            this.scopesTextBox.Location = new System.Drawing.Point(159, 155);
+            this.scopesTextBox.Location = new System.Drawing.Point(159, 415);
             this.scopesTextBox.Name = "scopesTextBox";
             this.scopesTextBox.Size = new System.Drawing.Size(267, 20);
             this.scopesTextBox.TabIndex = 1;
@@ -168,7 +174,7 @@
             // accessTokenLabel
             // 
             this.accessTokenLabel.AutoSize = true;
-            this.accessTokenLabel.Location = new System.Drawing.Point(12, 213);
+            this.accessTokenLabel.Location = new System.Drawing.Point(12, 473);
             this.accessTokenLabel.Name = "accessTokenLabel";
             this.accessTokenLabel.Size = new System.Drawing.Size(118, 13);
             this.accessTokenLabel.TabIndex = 0;
@@ -176,7 +182,7 @@
             // 
             // accessTokenTextBox
             // 
-            this.accessTokenTextBox.Location = new System.Drawing.Point(159, 210);
+            this.accessTokenTextBox.Location = new System.Drawing.Point(159, 470);
             this.accessTokenTextBox.Name = "accessTokenTextBox";
             this.accessTokenTextBox.Size = new System.Drawing.Size(267, 20);
             this.accessTokenTextBox.TabIndex = 1;
@@ -184,7 +190,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 239);
+            this.label4.Location = new System.Drawing.Point(12, 499);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(120, 13);
             this.label4.TabIndex = 0;
@@ -192,7 +198,7 @@
             // 
             // refreshTokenTextBox
             // 
-            this.refreshTokenTextBox.Location = new System.Drawing.Point(159, 236);
+            this.refreshTokenTextBox.Location = new System.Drawing.Point(159, 496);
             this.refreshTokenTextBox.Name = "refreshTokenTextBox";
             this.refreshTokenTextBox.Size = new System.Drawing.Size(267, 20);
             this.refreshTokenTextBox.TabIndex = 1;
@@ -200,7 +206,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 265);
+            this.label5.Location = new System.Drawing.Point(12, 525);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(111, 13);
             this.label5.TabIndex = 0;
@@ -208,7 +214,7 @@
             // 
             // tokenExpiryTextBox
             // 
-            this.tokenExpiryTextBox.Location = new System.Drawing.Point(159, 262);
+            this.tokenExpiryTextBox.Location = new System.Drawing.Point(159, 522);
             this.tokenExpiryTextBox.Name = "tokenExpiryTextBox";
             this.tokenExpiryTextBox.Size = new System.Drawing.Size(267, 20);
             this.tokenExpiryTextBox.TabIndex = 1;
@@ -216,7 +222,7 @@
             // refreshTokenButton
             // 
             this.refreshTokenButton.Enabled = false;
-            this.refreshTokenButton.Location = new System.Drawing.Point(159, 288);
+            this.refreshTokenButton.Location = new System.Drawing.Point(159, 548);
             this.refreshTokenButton.Name = "refreshTokenButton";
             this.refreshTokenButton.Size = new System.Drawing.Size(267, 23);
             this.refreshTokenButton.TabIndex = 2;
@@ -239,7 +245,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 320);
+            this.label6.Location = new System.Drawing.Point(12, 580);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(115, 13);
             this.label6.TabIndex = 4;
@@ -247,7 +253,7 @@
             // 
             // resourceUriTextBox
             // 
-            this.resourceUriTextBox.Location = new System.Drawing.Point(159, 317);
+            this.resourceUriTextBox.Location = new System.Drawing.Point(159, 577);
             this.resourceUriTextBox.Name = "resourceUriTextBox";
             this.resourceUriTextBox.Size = new System.Drawing.Size(267, 20);
             this.resourceUriTextBox.TabIndex = 1;
@@ -256,7 +262,7 @@
             // evhLinkLabel
             // 
             this.evhLinkLabel.AutoSize = true;
-            this.evhLinkLabel.Location = new System.Drawing.Point(311, 139);
+            this.evhLinkLabel.Location = new System.Drawing.Point(150, 74);
             this.evhLinkLabel.Name = "evhLinkLabel";
             this.evhLinkLabel.Size = new System.Drawing.Size(25, 13);
             this.evhLinkLabel.TabIndex = 5;
@@ -267,7 +273,7 @@
             // satchLinkLabel
             // 
             this.satchLinkLabel.AutoSize = true;
-            this.satchLinkLabel.Location = new System.Drawing.Point(342, 139);
+            this.satchLinkLabel.Location = new System.Drawing.Point(181, 74);
             this.satchLinkLabel.Name = "satchLinkLabel";
             this.satchLinkLabel.Size = new System.Drawing.Size(33, 13);
             this.satchLinkLabel.TabIndex = 6;
@@ -278,7 +284,7 @@
             // knopflerLinkLabel
             // 
             this.knopflerLinkLabel.AutoSize = true;
-            this.knopflerLinkLabel.Location = new System.Drawing.Point(381, 139);
+            this.knopflerLinkLabel.Location = new System.Drawing.Point(220, 74);
             this.knopflerLinkLabel.Name = "knopflerLinkLabel";
             this.knopflerLinkLabel.Size = new System.Drawing.Size(45, 13);
             this.knopflerLinkLabel.TabIndex = 7;
@@ -288,7 +294,7 @@
             // 
             // getResourceButton
             // 
-            this.getResourceButton.Location = new System.Drawing.Point(159, 343);
+            this.getResourceButton.Location = new System.Drawing.Point(159, 603);
             this.getResourceButton.Name = "getResourceButton";
             this.getResourceButton.Size = new System.Drawing.Size(267, 23);
             this.getResourceButton.TabIndex = 2;
@@ -296,14 +302,68 @@
             this.getResourceButton.UseVisualStyleBackColor = true;
             this.getResourceButton.Click += new System.EventHandler(this.getResourceButton_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 74);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(133, 13);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Sample Resource Owners:";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.tokenEndpointLabel);
+            this.groupBox1.Controls.Add(this.tokenEndpointTextBox);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.oauth2ClientIdTextBox);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.oauth2ClientSecretTextBox);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(414, 160);
+            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "OAuth2 Authorization Server Details";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Location = new System.Drawing.Point(153, 101);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(254, 53);
+            this.textBox1.TabIndex = 2;
+            this.textBox1.Text = "Remember, the client is the application - NOT the person using it. You\'ll typical" +
+    "ly need to register your app with some OAuth2 provider to obtain the client ID a" +
+    "nd client secret used here.";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.usernameLabel);
+            this.groupBox2.Controls.Add(this.usernameTextBox);
+            this.groupBox2.Controls.Add(this.knopflerLinkLabel);
+            this.groupBox2.Controls.Add(this.passwordLabel);
+            this.groupBox2.Controls.Add(this.satchLinkLabel);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.evhLinkLabel);
+            this.groupBox2.Controls.Add(this.passwordTextBox);
+            this.groupBox2.Location = new System.Drawing.Point(12, 179);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(414, 97);
+            this.groupBox2.TabIndex = 9;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Resource Owner Credentials";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(877, 678);
-            this.Controls.Add(this.knopflerLinkLabel);
-            this.Controls.Add(this.satchLinkLabel);
-            this.Controls.Add(this.evhLinkLabel);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.outputTextBox);
             this.Controls.Add(this.getResourceButton);
@@ -318,19 +378,13 @@
             this.Controls.Add(this.accessTokenLabel);
             this.Controls.Add(this.scopesTextBox);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.passwordTextBox);
-            this.Controls.Add(this.passwordLabel);
-            this.Controls.Add(this.usernameTextBox);
-            this.Controls.Add(this.usernameLabel);
-            this.Controls.Add(this.oauth2ClientSecretTextBox);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.oauth2ClientIdTextBox);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.tokenEndpointTextBox);
-            this.Controls.Add(this.tokenEndpointLabel);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -365,6 +419,10 @@
         private System.Windows.Forms.LinkLabel satchLinkLabel;
         private System.Windows.Forms.LinkLabel knopflerLinkLabel;
         private System.Windows.Forms.Button getResourceButton;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
 

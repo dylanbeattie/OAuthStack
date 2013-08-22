@@ -34,8 +34,15 @@ namespace OAuthStack.AuthServer.OAuth2 {
 
             // TODO: artificially shorten the access token's lifetime if the original authorization is due to expire sooner than the default lifespan.
             // (i.e. don't give out 7-day access tokens to somebody who has only granted your app access for 24 hours) 
+
+            // TODO: choose the appropriate signing keys for the specific resource server being used.
+            // If you need to support multiple resource servers, there's two options.
+            // 1) Use the same RSA key pair on every resource server.
+            // 2) Select the appropriate key pair based on the requested scope (this assumes each scope maps to exactly one resource server)
+
             accessToken.ResourceServerEncryptionKey = dataServerKeys.PublicSigningKey;
             accessToken.AccessTokenSigningKey = authServerKeys.PrivateEncryptionKey;
+
             return (new AccessTokenResult(accessToken));
         }
 

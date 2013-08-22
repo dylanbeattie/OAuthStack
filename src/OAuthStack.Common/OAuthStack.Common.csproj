@@ -111,6 +111,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Security\CryptoKeyPair.cs" />
     <Compile Include="Infrastructure\RequireOAuth2ScopeAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceModel\Users.cs" />

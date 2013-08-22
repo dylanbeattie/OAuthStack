@@ -1,11 +1,9 @@
-using System;
 using System.IO;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
-using System.Web.Hosting;
 using OAuthStack.Common.Services;
 
-namespace OAuthStack.FakeServices {
+namespace OAuthStack.Common.Security {
     /// <summary>Provides a FAKE implementation using hard-coded RSA crypto keys. Don't do this in production. Really.</summary>
     public class CryptoKeyPair : ICryptoKeyPair {
 

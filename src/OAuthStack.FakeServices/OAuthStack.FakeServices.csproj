@@ -79,12 +79,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CryptoKeyPair.cs" />
     <Compile Include="FakeCryptoKeyStore.cs" />
     <Compile Include="FakeOAuth2ClientStore.cs" />
     <Compile Include="FakeOAuth2Client.cs" />
     <Compile Include="FakeUserStore.cs" />
-    <Compile Include="HardCodedCryptoKeys.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Hosting;
+using OAuthStack.Common.Security;
 using OAuthStack.Common.ServiceModel;
 using OAuthStack.Common.Services;
 using OAuthStack.FakeServices;

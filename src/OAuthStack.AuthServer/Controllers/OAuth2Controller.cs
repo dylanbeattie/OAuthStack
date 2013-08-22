@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using DotNetOpenAuth.Messaging;
 using DotNetOpenAuth.OAuth2;
 using OAuthStack.AuthServer.OAuth2;
+using OAuthStack.Common.Security;
 using OAuthStack.FakeServices;
 
 namespace OAuthStack.AuthServer.Controllers {
