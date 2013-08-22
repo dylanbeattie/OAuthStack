@@ -142,6 +142,16 @@
       <Name>OAuthStack.FakeServices</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\OAuthStack.Common\Certificates\auth-server.pfx">
+      <Link>Certificates\auth-server.pfx</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\OAuthStack.Common\Certificates\data-server.pfx">
+      <Link>Certificates\data-server.pfx</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <ProjectExtensions>

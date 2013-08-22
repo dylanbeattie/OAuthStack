@@ -120,6 +120,8 @@
     <Compile Include="ServiceModel\User.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Certificates\auth-server.pfx" />
+    <None Include="Certificates\data-server.pfx" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

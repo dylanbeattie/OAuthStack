@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
+using System.Web.Hosting;
 using OAuthStack.Common.ServiceModel;
 using OAuthStack.Common.Services;
 using OAuthStack.FakeServices;
@@ -24,9 +26,15 @@ namespace OAuthStack.UserDataServer.Infrastructure {
               .Add<Users>("/users/{Username}");
 
             //Register all your dependencies		
-            container.Register("authServer", c => (ICryptoKeyPair)new CryptoKeyPair(ExampleCryptoKeys.AuthServerPublicKey, ExampleCryptoKeys.AuthServerSecretKey));
-            container.Register("dataServer", c => (ICryptoKeyPair)new CryptoKeyPair(ExampleCryptoKeys.DataServerPublicKey, ExampleCryptoKeys.DataServerSecretKey));
+            ;
+
+
+            container.Register("authServer", c =>
+                CryptoKeyPair.LoadCertificate(HostingEnvironment.MapPath("~/bin/Certificates/auth-server.pfx"), "p@ssw0rd"));
+            container.Register("dataServer", c =>
+                CryptoKeyPair.LoadCertificate(HostingEnvironment.MapPath("~/bin/Certificates/data-server.pfx"), "p@ssw0rd"));
             container.RegisterAutoWiredAs<FakeUserStore, IUserStore>();
         }
+
     }
 }

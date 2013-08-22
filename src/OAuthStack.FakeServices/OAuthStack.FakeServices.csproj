@@ -71,6 +71,7 @@
     <Reference Include="System.Threading.Tasks">
       <HintPath>..\packages\Microsoft.Bcl.1.1.3\lib\net40\System.Threading.Tasks.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -78,7 +79,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FakeCryptoKeyPair.cs" />
+    <Compile Include="CryptoKeyPair.cs" />
     <Compile Include="FakeCryptoKeyStore.cs" />
     <Compile Include="FakeOAuth2ClientStore.cs" />
     <Compile Include="FakeOAuth2Client.cs" />
