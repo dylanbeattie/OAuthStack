@@ -11,9 +11,19 @@ A sample project demonstrating the *resource owner password flow* in OAuth2, wit
 
 **Reading OAuth2 crypto keys from X509 certificate files**
 
-Instead of the hard-wired crypto keys in the DotNetOpenAuth samples,   
+Instead of the hard-wired crypto keys in the DotNetOpenAuth samples, we're reading the public and private keys from X.509 certificates (which I've created using [SelfCert](http://blog.pluralsight.com/2012/02/13/selfcert-create-a-self-signed-certificate-interactively-gui-or-programmatically-in-net/) from PluralSight)
 
+----------
 
+###Project Structure###
+
+- **OAuthStack.AuthServer** is the OAuth authorization server. Based on the sample authorization server included with DotNetOpenAuth, it's based on ASP.NET MVC 4. This example exposes a single action method - `/oauth2/token` - which will accept a username/password supplied in an HTTP Authentication header, and return an OAuth2 access token + refresh token.
+- **OAuthStack.UserDataServer** exposes a really simple ReST API - users can `GET /users/{username}` to retrieve information about themselves. Anonymous access is not permitted, and if they try to retrieve another users' information they'll get a `403 Forbidden`
+- **OAuthStack.DemoClient** is a WinForms desktop client demonstrating the *resource owner password flow* and various HTTP exchanges involved.
+- **OAuthStack.Common** defines the shared entities and interfaces used by the rest of the project
+- **OAuthStack.FakeServices** provides fake implementations of the client store, crypto key store and other required services. In a production app, most of these would be replaced by services built on a proper relational database such as MS SQL Server.
+
+----------
 
 ###OAuth2 Terminology###
 
@@ -39,14 +49,4 @@ from [http://tools.ietf.org/html/rfc6749#section-1.1](http://tools.ietf.org/html
 > 
 > The server issuing access tokens to the client after successfully
       authenticating the resource owner and obtaining authorization.
-
-###Components###
-
-- **OAuthStack.AuthServer** is the OAuth authorization server. Based on the sample authorization server included with DotNetOpenAuth, it's based on ASP.NET MVC 4. This example exposes a single action method - `/oauth2/token` - which will accept a username/password supplied in an HTTP Authentication header, and return an OAuth2 access token + refresh token.
-- **OAuthStack.UserDataServer** exposes a really simple ReST API - users can `GET /users/{username}` to retrieve information about themselves. Anonymous access is not permitted, and if they try to retrieve another users' information they'll get a `403 Forbidden`
-- **OAuthStack.DemoClient** is a WinForms desktop client demonstrating the *resource owner password flow* and various HTTP exchanges involved.
-- **OAuthStack.Common** defines the shared entities and interfaces used by the rest of the project
-- **OAuthStack.FakeServices** provides fake implementations of the client store, crypto key store and other required services. In a production app, most of these would be replaced by services built on a proper relational database such as MS SQL Server.
-
-
 
