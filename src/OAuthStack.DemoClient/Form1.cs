@@ -81,7 +81,10 @@ namespace OAuthStack.DemoClient {
             // add the authorization header before the request is sent
             // to the API server
             apiClient.LocalHttpWebRequestFilter = request => {
+
+                // This is the magic line that makes all the client-side magic work :)
                 ClientBase.AuthorizeRequest(request, accessTokenTextBox.Text);
+
                 LogStuff(request, sb);
             };
             // This filter is used only for logging the response output. The code will work without it.
@@ -90,9 +93,7 @@ namespace OAuthStack.DemoClient {
             try {
                 // Send the API request and dump the response to our output TextBox
                 var response = apiClient.Get(apiRequestDto);
-                sb.AppendLine(String.Empty.PadRight(TRIM_HEADER_AT, '='));
-                sb.AppendLine(String.Format("Full Name: {0} {1}", response.Forenames, response.Surname));
-                sb.AppendLine(String.Format("E-mail: {0}", response.Email));
+                LogStuff(response, sb);
             } catch (WebServiceException ex) {
                 sb.AppendLine(ex.Dump());
                 sb.AppendLine(ex.ResponseBody.Replace(" at ", Environment.NewLine + "   at "));
@@ -102,8 +103,18 @@ namespace OAuthStack.DemoClient {
             outputTextBox.Text = sb.ToString();
         }
 
-        private const int TRIM_HEADER_AT = 32;
+        private const int TRIM_HEADER_AT = 64;
+
+        private void LogStuff(User response, StringBuilder sb) {
+            sb.AppendLine();
+            sb.AppendLine("== Decoded response data ".PadRight(TRIM_HEADER_AT, '='));
+            sb.AppendLine(String.Format("Full Name: {0} {1}", response.Forenames, response.Surname));
+            sb.AppendLine(String.Format("E-mail: {0}", response.Email));
+        }
+
         private void LogStuff(HttpWebRequest request, StringBuilder sb) {
+            sb.AppendLine();
+            sb.AppendLine("== HTTP Request ".PadRight(TRIM_HEADER_AT, '='));
             sb.Append(request.Method);
             sb.Append(" ");
             sb.AppendLine(request.RequestUri.PathAndQuery);
@@ -113,8 +124,9 @@ namespace OAuthStack.DemoClient {
         }
 
         private void LogStuff(HttpWebResponse rsp, StringBuilder sb) {
-            sb.AppendLine(String.Empty.PadLeft(32, '='));
-            sb.AppendLine(rsp.StatusCode + " " + rsp.StatusDescription);
+            sb.AppendLine();
+            sb.AppendLine("== HTTP Response ".PadRight(TRIM_HEADER_AT, '='));
+            sb.AppendLine(((int)rsp.StatusCode) + " " + rsp.StatusDescription);
             foreach (var header in rsp.Headers.AllKeys) {
                 sb.AppendLine(String.Format("  {0}: {1}", header, rsp.Headers[header].Length > TRIM_HEADER_AT ? rsp.Headers[header].Substring(0, TRIM_HEADER_AT) + "..." : rsp.Headers[header]));
             }
