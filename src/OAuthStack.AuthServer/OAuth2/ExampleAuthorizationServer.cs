@@ -12,13 +12,16 @@ namespace OAuthStack.AuthServer.OAuth2 {
     public class ExampleAuthorizationServer : IAuthorizationServerHost {
 
         private readonly ICryptoKeyStore cryptoKeyStore;
-        private readonly ICryptoKeyProvider keyProvider;
+        private readonly ICryptoKeyPair authServerKeys;
+        private readonly ICryptoKeyPair dataServerKeys;
         private readonly IOAuth2ClientStore clientStore;
         private readonly IUserStore userStore;
 
-        public ExampleAuthorizationServer(ICryptoKeyStore cryptoKeyStore, ICryptoKeyProvider keyProvider, IOAuth2ClientStore clientStore, IUserStore userStore) {
+        public ExampleAuthorizationServer(ICryptoKeyStore cryptoKeyStore,
+            ICryptoKeyPair authServerKeys, ICryptoKeyPair dataServerKeys, IOAuth2ClientStore clientStore, IUserStore userStore) {
             this.cryptoKeyStore = cryptoKeyStore;
-            this.keyProvider = keyProvider;
+            this.authServerKeys = authServerKeys;
+            this.dataServerKeys = dataServerKeys;
             this.clientStore = clientStore;
             this.userStore = userStore;
         }
@@ -36,10 +39,8 @@ namespace OAuthStack.AuthServer.OAuth2 {
             // Also take into account the remaining life of the authorization and artificially shorten the access token's lifetime
             // to account for that if necessary.
             //// TODO: code here
-
-            accessToken.ResourceServerEncryptionKey = keyProvider.RestServerPublicKey;
-            accessToken.AccessTokenSigningKey = keyProvider.AuthServerPrivateKey;
-
+            accessToken.ResourceServerEncryptionKey = dataServerKeys.PublicSigningKey;
+            accessToken.AccessTokenSigningKey = authServerKeys.PrivateEncryptionKey;
             var result = new AccessTokenResult(accessToken);
             return result;
         }

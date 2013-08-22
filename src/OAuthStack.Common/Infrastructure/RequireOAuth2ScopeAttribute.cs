@@ -27,8 +27,9 @@ namespace OAuthStack.Common.Infrastructure {
 
         public override void Execute(IHttpRequest request, IHttpResponse response, object requestDto) {
             try {
-                var keys = AppHostBase.Resolve<ICryptoKeyProvider>();
-                var tokenAnalyzer = new StandardAccessTokenAnalyzer(keys.AuthServerPublicKey, keys.RestServerPrivateKey);
+                var authServerKeys = AppHostBase.Instance.Container.ResolveNamed<ICryptoKeyPair>("authServer");
+                var dataServerKeys = AppHostBase.Instance.Container.ResolveNamed<ICryptoKeyPair>("dataServer");
+                var tokenAnalyzer = new StandardAccessTokenAnalyzer(authServerKeys.PublicSigningKey, dataServerKeys.PrivateEncryptionKey);
                 var oauth2ResourceServer = new DotNetOpenAuth.OAuth2.ResourceServer(tokenAnalyzer);
                 var wrappedRequest = new HttpRequestWrapper((HttpRequest)request.OriginalRequest);
                 HttpContext.Current.User = oauth2ResourceServer.GetPrincipal(wrappedRequest, oauth2Scopes);

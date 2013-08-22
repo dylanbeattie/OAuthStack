@@ -16,7 +16,9 @@ namespace OAuthStack.UserDataServer.ServiceModel {
         }
 
         public User Any(Users users) {
-            if (HttpContext.Current.User.Identity.Name != users.Username) throw (new UnauthorizedAccessException());
+            if (HttpContext.Current.User.Identity.Name != users.Username) {
+                throw (new UnauthorizedAccessException(String.Format("Your access token doesn't grant access to information for the user named {0}", users.Username)));
+            }
             return (userStore.GetUser(users.Username));
         }
     }

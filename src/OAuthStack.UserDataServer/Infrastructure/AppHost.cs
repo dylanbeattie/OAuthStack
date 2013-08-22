@@ -23,9 +23,9 @@ namespace OAuthStack.UserDataServer.Infrastructure {
               .Add<Users>("/users")
               .Add<Users>("/users/{Username}");
 
-
             //Register all your dependencies		
-            container.RegisterAutoWiredAs<FakeCryptoKeyProvider, ICryptoKeyProvider>();
+            container.Register("authServer", c => (ICryptoKeyPair)new CryptoKeyPair(ExampleCryptoKeys.AuthServerPublicKey, ExampleCryptoKeys.AuthServerSecretKey));
+            container.Register("dataServer", c => (ICryptoKeyPair)new CryptoKeyPair(ExampleCryptoKeys.DataServerPublicKey, ExampleCryptoKeys.DataServerSecretKey));
             container.RegisterAutoWiredAs<FakeUserStore, IUserStore>();
         }
     }
