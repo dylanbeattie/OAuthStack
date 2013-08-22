@@ -29,20 +29,14 @@ namespace OAuthStack.AuthServer.OAuth2 {
         public AccessTokenResult CreateAccessToken(IAccessTokenRequest accessTokenRequestMessage) {
             var accessToken = new AuthorizationServerAccessToken();
 
-            // Just for the sake of the sample, we use a short-lived token.  This can be useful to mitigate the security risks
-            // of access tokens that are used over standard HTTP.
-            // But this is just the lifetime of the access token.  The client can still renew it using their refresh token until
-            // the authorization itself expires.
-            // TODO: implementation of lifespan.
+            // TODO: work out and implement appropriate lifespan for access tokens based on your specific application requirements
             accessToken.Lifetime = TimeSpan.FromSeconds(15);
 
-            // Also take into account the remaining life of the authorization and artificially shorten the access token's lifetime
-            // to account for that if necessary.
-            //// TODO: code here
+            // TODO: artificially shorten the access token's lifetime if the original authorization is due to expire sooner than the default lifespan.
+            // (i.e. don't give out 7-day access tokens to somebody who has only granted your app access for 24 hours) 
             accessToken.ResourceServerEncryptionKey = dataServerKeys.PublicSigningKey;
             accessToken.AccessTokenSigningKey = authServerKeys.PrivateEncryptionKey;
-            var result = new AccessTokenResult(accessToken);
-            return result;
+            return (new AccessTokenResult(accessToken));
         }
 
         public IClientDescription GetClient(string clientIdentifier) {
@@ -54,13 +48,14 @@ namespace OAuthStack.AuthServer.OAuth2 {
         }
 
         public AutomatedUserAuthorizationCheckResponse CheckAuthorizeResourceOwnerCredentialGrant(string userName, string password, IAccessTokenRequest accessRequest) {
+            //TODO: this is where the OAuth2 server checks the client username/password are correct. Replace this with your own implementation.
             var user = userStore.GetUser(userName);
             var approved = (user != null && user.VerifyPassword(password));
             return (new AutomatedUserAuthorizationCheckResponse(accessRequest, approved, userName));
         }
 
         public AutomatedAuthorizationCheckResponse CheckAuthorizeClientCredentialsGrant(IAccessTokenRequest accessRequest) {
-            //TODO: implement this
+            //TODO: if you're using web-based redirect login, this is where you verify the client's access token request is valid.
             return (new AutomatedAuthorizationCheckResponse(accessRequest, true));
         }
 
@@ -69,7 +64,7 @@ namespace OAuthStack.AuthServer.OAuth2 {
 
 
         public bool CanBeAutoApproved(EndUserAuthorizationRequest authorizationRequest) {
-            //TODO: implement this
+            //TODO: make sure we have a valid client secret on file matching that included with the authorization request
             return (true);
             //if (authorizationRequest == null) {
             //    throw new ArgumentNullException("authorizationRequest");
@@ -96,7 +91,7 @@ namespace OAuthStack.AuthServer.OAuth2 {
         }
 
         private bool IsAuthorizationValid(HashSet<string> requestedScopes, string clientIdentifier, DateTime issuedUtc, string username) {
-            // TODO: implement this
+            // TODO: This is where we should check (e.g. in our authorization database) that the resource owner has not revoked the authorization associated with the request.
             return (true);
             // If db precision exceeds token time precision (which is common), the following query would
             // often disregard a token that is minted immediately after the authorization record is stored in the db.
