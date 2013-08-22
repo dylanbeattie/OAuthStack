@@ -3,15 +3,25 @@ OAuthStack
 
 A sample project demonstrating the *resource owner password flow* in OAuth2, with separate authorization and resource servers. This also demonstrates using DotNetOpenAuth to secure access to resources hosted by a ServiceStack-powered ReST API.
 
+If you're using this as a template for your own production implementation, [search the source for comments containing **TODO**](https://github.com/dylanbeattie/OAuthStack/search?q=TODO&ref=cmdform) - that (I think!) should highlight the areas where you'll need to plug in your own code, data or implementations.
+
+--------
+
+
 ###Points of Interest###
 
 **OAuth2/ServiceStack integration**
 
- Take a look at [OAuthStack.Common.Infrastructure.RequireOAuth2ScopeAttribute](https://github.com/dylanbeattie/OAuthStack/blob/master/src/OAuthStack.Common/Infrastructure/RequireOAuth2ScopeAttribute.cs) - this is a ServiceStack RequestFilterAttribute that uses DotNetOpenAuth to verify that the request is authorised to access a specific service.
+This was actually not that complex once I had an OAuth2 infrastructure up and running:
+
+**Server-side:** Take a look at [OAuthStack.Common.Infrastructure.RequireOAuth2ScopeAttribute](https://github.com/dylanbeattie/OAuthStack/blob/master/src/OAuthStack.Common/Infrastructure/RequireOAuth2ScopeAttribute.cs) - this is a ServiceStack RequestFilterAttribute that uses DotNetOpenAuth to verify that the request is authorised to access a specific service.
+
+**Client-side:** we're using the ServiceStack client's LocalHttpWebRequestFilter property to hook in some code that calls DotNetOpenAuth's ClientBase.AuthorizeRequest() method before the request is sent to the server. Check out the [getResourceButton_Click](https://github.com/dylanbeattie/OAuthStack/blob/master/src/OAuthStack.DemoClient/Form1.cs#L86) method in DemoClient\Form1.cs.
+
 
 **Reading OAuth2 crypto keys from X509 certificate files**
 
-Instead of the hard-wired crypto keys in the DotNetOpenAuth samples, we're reading the public and private keys from X.509 certificates (which I've created using [SelfCert](http://blog.pluralsight.com/2012/02/13/selfcert-create-a-self-signed-certificate-interactively-gui-or-programmatically-in-net/) from PluralSight)
+Instead of the hard-wired crypto keys in the DotNetOpenAuth samples, we're reading the public and private keys from X.509 certificates (which I've created using [SelfCert](http://blog.pluralsight.com/2012/02/13/selfcert-create-a-self-signed-certificate-interactively-gui-or-programmatically-in-net/) from PluralSight) - have a look at the constructors on [OAuthStack.Common.Security.CryptoKeyPair.cs](https://github.com/dylanbeattie/OAuthStack/blob/master/src/OAuthStack.Common/Security/CryptoKeyPair.cs)
 
 ----------
 
