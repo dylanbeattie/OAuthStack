@@ -11,6 +11,10 @@ If you're using this as a template for your own production implementation, [sear
 
 Some people have reported problems restoring NuGet packages related to Microsoft.Bcl.Build. These appear to be caused by [http://blogs.msdn.com/b/dotnet/archive/2013/08/22/improved-package-restore.aspx](http://blogs.msdn.com/b/dotnet/archive/2013/08/22/improved-package-restore.aspx)
 
+To work around this, I've checked the /packages/Microsoft.Bcl.Build.* folders into source control. Yeah, I know you're not supposed
+to check in your /packages folder, but until there's a clean resolution for this issue this is the easiest way
+to make sure it'll build from a clean checkout.
+
 --------
 
 ###Points of Interest###
