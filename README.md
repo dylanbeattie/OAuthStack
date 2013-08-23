@@ -7,6 +7,11 @@ If you're using this as a template for your own production implementation, [sear
 
 --------
 
+###Known Issues###
+
+Some people have reported problems restoring NuGet packages related to Microsoft.Bcl.Build. These appear to be caused by [http://blogs.msdn.com/b/dotnet/archive/2013/08/22/improved-package-restore.aspx](http://blogs.msdn.com/b/dotnet/archive/2013/08/22/improved-package-restore.aspx)
+
+--------
 
 ###Points of Interest###
 
